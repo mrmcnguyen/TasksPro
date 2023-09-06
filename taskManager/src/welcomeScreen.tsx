@@ -7,13 +7,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className='circle'></div>
       <div>
           <img src={tasksLogo} className="logo" alt="Tasks logo" />
       </div>
       <h1>Welcome to Tasks Pro.</h1>
       <div className="card">
         <button className="get-started-button">
-          Get Started.
+          Get Started
         </button>
 
       </div>
