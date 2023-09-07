@@ -3,100 +3,163 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  animation: fade-in-bottom 0.5s ease-in-out forwards;
+  animation: fade-in-bottom 1s ease-in-out forwards;
   opacity: 0;
-}
+  }
 
-.body:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo {
+  
+  .App {
+    width: 800px;
+    height: 600px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #000;
+    border-style: solid;
+    border-color: #00f19f #00FD92;
+    box-shadow:  5px 5px 100px #61dafbaa; /* Added box-shadow property */
+    padding: 1.75em;
+    transition: box-shadow 0.1s myCustomAnimation;
+  }
+  
+  @keyframes myCustomAnimation {
+    0% {
+      /* Start with initial state */
+      transform: scale(1);
+    }
+    25% {
+      /* Apply intermediate state at 25% */
+      transform: scale(5); /* Increase intensity by scaling up */
+    }
+    75% {
+      /* Apply another intermediate state at 75% */
+      transform: scale(6); /* Decrease intensity by scaling down */
+    }
+    100% {
+      /* End state */
+      transform: scale(10);
+    }
+  }
+  
+  .logo {
   max-height: 13em; /* Use max-height for responsiveness */
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
-
-.logo:hover {
+  }
+  
+  
+  .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
+  }
+  
+  
+  .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-.App h1 {
-  font-size: 3.2em;
+  }
+  
+  
+  .App h1 {
+  font-size: 3em;
   line-height: 1.1;
   color: #D5D8DC;
-}
-
-@keyframes fade-in-bottom {
+  }
+  
+  
+  @keyframes fade-in-bottom {
   0% {
-    opacity: 0;
-    transform: translateY(20px); /* Adjust the distance as needed */
+  opacity: 0;
+  transform: translateY(20px); /* Adjust the distance as needed */
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
   }
-}
-
-/* Add more media queries for different screen sizes if needed */
-@media (max-width: 768px) {
+  }
+  
+  
+  /* Add more media queries for different screen sizes if needed */
+  @media (max-width: 768px) {
   #root {
-    padding: 1rem; /* Adjust padding for smaller screens */
+  padding: 1rem; /* Adjust padding for smaller screens */
   }
-
+  
+  
   .logo {
-    max-height: 8em; /* Adjust logo size for smaller screens */
+  max-height: 8em; /* Adjust logo size for smaller screens */
   }
-}
-
-@keyframes logo-spin {
+  }
+  
+  
+  @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
   }
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
+  }
+  
+  
+  
+  
+  @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
+  }
+  
+  
+  .card {
   padding: 2em;
-}
-
-.get-started-button {
-  width: 200px;
-  height: 60px;
-}
-
-.get-started-button:hover {
+  }
+  
+  
+  .get-started-button {
+  width: 190px;
+  height: 50px;
+  background: linear-gradient(to right, #00FD92, #00A4FA);
+  color: #242424; /* Set the text color to make it readable on the gradient background */
+  border: none; /* Remove any default button border */
+  cursor: pointer; /* Add a pointer cursor for interaction */
+  transition: filter 300ms;
+  animation: moveColors 0.5s backwards infinite;
+  }
+  
+  
+  @keyframes moveColors {
+  0% {
+  background-position: 0% 0%;
+  }
+  50% {
+  background-position: 75% 75%;
+  }
+  100% {
+  background-position: 100% 100%;
+  }
+  }
+  
+  
+  .get-started-button:hover {
   filter: drop-shadow(0 0 1em #00f19f);
-}
-
-.company-name-display {
+  }
+  
+  
+  .company-name-display {
   color: #888;
-}
-
-#Dashboard body {
+  }
+  
+  
+  #Dashboard container {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-
-}
-    
-#Dashboard logo {
+  
+  
+  }
+  #Dashboard .logo {
   max-height: 13em;
   padding: 1em;
   will-change: filter;
@@ -104,64 +167,84 @@
   position: absolute; /* Position the logo absolutely */
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */
-}
-
-
-#Dashboard .logo:hover {
+  }
+  
+  
+  
+  
+  #Dashboard .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-#Dashboard .logo.react:hover {
+  }
+  
+  
+  #Dashboard .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-#Dashboard .container h1 welcome-text {
+  }
+  
+  
+  #Dashboard .container h1 .welcome-text {
   font-size: 3.2em;
   line-height: 1.1;
   color: #D5D8DC;
-}
-
-@keyframes fade-in-bottom {
+  }
+  
+  
+  @keyframes fade-in-bottom {
   0% {
-    opacity: 0;
-    transform: translateY(20px); /* Adjust the distance as needed */
+  opacity: 0;
+  transform: translateY(20px); /* Adjust the distance as needed */
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
   }
-}
-
-/* Add more media queries for different screen sizes if needed */
-@media (max-width: 768px) {
+  }
+  
+  
+  /* Add more media queries for different screen sizes if needed */
+  @media (max-width: 768px) {
   #root {
-    padding: 1rem; /* Adjust padding for smaller screens */
+  padding: 1rem; /* Adjust padding for smaller screens */
   }
-
+  
+  
   .logo {
-    max-height: 8em; /* Adjust logo size for smaller screens */
+  max-height: 8em; /* Adjust logo size for smaller screens */
   }
-}
-
-@keyframes logo-spin {
+  }
+  
+  
+  @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
   }
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
+  }
+  
+  
+  
+  
+  @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
+  }
+  
+  
+  .card {
   padding: 2em;
-}
-
-
-
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

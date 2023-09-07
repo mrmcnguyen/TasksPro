@@ -1,70 +1,136 @@
-    
-  .logo {
-    max-height: 13em;
-    padding: 1em;
-    will-change: filter;
-    transition: filter 300ms;
-    position: absolute; /* Position the logo absolutely */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
+#Dashboard .root {
+  max-width: 90%; /* Use a percentage for responsiveness */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  animation: fade-in-bottom 0.5s ease-in-out forwards;
+  opacity: 0;
   }
   
   
+  *, *:before, *:after { box-sizing: inherit; }
+  
+  
+  #Dashboard .logo {
+  max-height: 13em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+  position: absolute; /* Position the logo absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  }
   .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
   }
-  
   .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  .container .welcome-text {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #D5D8DC;
   }
   
-  .h1 welcome-text {
-    font-size: 3.2em;
-    line-height: 1.1;
-    color: #D5D8DC;
+  
+  .container .inputs {
+  height: 60%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  justify-content: center;
+  padding: 5px;
   }
   
+  
+  @keyframes gradient {
+  0%{background-position:0 0}
+  100%{background-position:100% 0}
+  }
+  
+  
+  .container .inputs .taskName {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1em;
+  margin: 0 auto;
+  border-radius: 25px;
+  border-color: #57E6E6;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+  }
+  
+  
+  .container .inputs .taskDescription {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+  border-color: #57E6E6;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);;
+  }
+  
+  
+  .container .inputs .addTask {
+  width: 180px;
+  height: 40px;
+  background: linear-gradient(to right, #00FD92, #00A4FA);
+  color: #242424; /* Set the text color to make it readable on the gradient background */
+  border: none; /* Remove any default button border */
+  cursor: pointer; /* Add a pointer cursor for interaction */
+  transition: filter 300ms;
+  animation: moveColors 0.5s backwards infinite;
+  }
+  
+  
+  .container .tasks {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  justify-content: center;
+  }
   @keyframes fade-in-bottom {
-    0% {
-      opacity: 0;
-      transform: translateY(20px); /* Adjust the distance as needed */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  0% {
+  opacity: 0;
+  transform: translateY(20px); /* Adjust the distance as needed */
   }
-  
+  100% {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
   /* Add more media queries for different screen sizes if needed */
   @media (max-width: 768px) {
-    #root {
-      padding: 1rem; /* Adjust padding for smaller screens */
-    }
-  
-    .logo {
-      max-height: 8em; /* Adjust logo size for smaller screens */
-    }
+  #root {
+  padding: 1rem; /* Adjust padding for smaller screens */
   }
-  
+  .logo {
+  max-height: 8em; /* Adjust logo size for smaller screens */
+  }
+  }
   @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+  transform: rotate(0deg);
   }
-  
-  
+  to {
+  transform: rotate(360deg);
+  }
+  }
   @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-      animation: logo-spin infinite 20s linear;
-    }
+  a:nth-of-type(2) .logo {
+  animation: logo-spin infinite 20s linear;
+  }
   }
   
-  .card {
-    padding: 2em;
-  }
   
-
+  
+  
+  
+  
+  
+  
+  
   
