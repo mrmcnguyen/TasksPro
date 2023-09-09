@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { Outlet } from "react-router-dom";
 import { Task } from './Task';
 import Logo from '../resources/logoICON.png'
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import './Dashboard.css'
-
+import './Sidebar'
 
 function Dashboard(){
 const [tasks, setTasks] = useState<Task[]>([]);
 const [newTask, setNewTask] = useState<Task>({ id: 0, title: '', description: '', completed: false });
-
 
 const handleAddTask = () => {
 setTasks([...tasks, newTask]);
@@ -28,11 +29,31 @@ task.id === taskId ? { ...task, completed: !task.completed } : task
 setTasks(updatedTasks);
 };
 
-
 return (
-
 <div className="container">
-<h1 className='welcome-text'>Task Manager Dashboard</h1>
+<div className="dashboard-container">
+<Link to='/'>
+    <div className='logoDiv'>
+<img className="icon" src={Logo}></img>
+<text className='logoText'>Tasks Pro.</text>
+</div>
+</Link>
+</div>
+<div className='rightContainer'>
+<h1 className='welcome-text'>Today's Tasks</h1>
+<div className='tasks'>
+{tasks.map(task => (
+<div className='taskEntry' key={task.id}>
+<input className='checkBox'
+type="checkbox"
+checked={task.completed}
+onChange={() => handleToggleComplete(task.id)}
+/>
+<span className='taskId'>{task.title}</span>
+<button className='deleteTask'>Delete</button>
+</div>
+))}
+</div>
 <div className='inputs'>
 <input
 className="taskName"
@@ -42,39 +63,23 @@ placeholder="Task title"
 value={newTask.title}
 onChange={handleTaskChange}
 />
-<textarea
-className='taskDescription'
-font-style
-name="description"
-placeholder="Task description"
-value={newTask.description}
-onChange={handleTaskChange}
-/>
 <button className='addTask' onClick={handleAddTask}>Add Task</button>
-</div>
-<div className='tasks'>
-{tasks.map(task => (
-<div key={task.id}>
-<input
-type="checkbox"
-checked={task.completed}
-onChange={() => handleToggleComplete(task.id)}
-/>
-<span>{task.title}</span>
-<button>Delete</button>
-</div>
-))}
 </div>
 <p className="version-display">
 Version 1.0.0
 </p>
 </div>
+</div>
+
+
+
+
+
 
 );
 };
 
 
+
+
 export default Dashboard;
-
-
-
