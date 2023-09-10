@@ -12,6 +12,7 @@ RouterProvider,
 import './index.css'
 import Root from "./routes/root";
 import Dashboard from './routes/Dashboard';
+import LoginSignup from './routes/LoginSignup';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,12 @@ element: <Sidebar />,
 },
 ],
 },
+{
+path: "/home/login",
+element: <LoginSignup />,
+errorElement: <ErrorPage />,
+},
+
 ])
 
 

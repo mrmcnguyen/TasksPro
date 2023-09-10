@@ -1,7 +1,6 @@
 #root {
   width: 100%; /* Use a percentage for responsiveness */
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   animation: fade-in-bottom 1s ease-in-out forwards;
   opacity: 0;

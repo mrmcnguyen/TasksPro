@@ -1,0 +1,180 @@
+.App {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    height: 600px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #000;
+    border-style: solid;
+    border-color: #00f19f #00FD92;
+    box-shadow:  5px 5px 100px #61dafbaa; /* Added box-shadow property */
+    padding: 1.75em;
+    transition: box-shadow 0.1s myCustomAnimation;
+  }
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    background: #212F3D;
+    min-height: 100vh; /* Take up at least the full viewport height */
+    padding-bottom: 5px;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px); /* Add a slight vertical movement */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Reset vertical position */
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    opacity:0;
+  }
+
+  .fade-in-element {
+    opacity:0;
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
+
+
+  .header text{
+    color: #D5D8DC;
+    font-size: 68px;
+    font-weight: 700;
+  }
+  
+  .header img {
+    width: 400px;
+  }
+  
+  .text {
+    color: #D5D8DC;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .underline {
+    width: 400px;
+    height: 4px;
+    background: #ABB2B9;
+    border-radius: 9px;
+  }
+  
+  .inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    gap: 25px;
+  }
+
+  .inputs 
+
+  .error-message {
+    color: red; /* Change the color to your desired color */
+  }
+  
+  .input {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    background: rgba(57, 63, 84, 0.8);
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-image: 2 linear-gradient(to right, #00FD92, #00A4FA);
+  }
+
+  .input::after {
+    background-image: linear-gradient(to right, white, black);
+    height: 1px;
+    display: block;
+  }
+
+
+  .input:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25); /* Increase shadow on hover */
+  }
+
+  .input:focus {
+    border-color: #707070; /* Change border color on hover/focus */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Adjust box shadow */
+  }
+  
+  
+  .input img {
+    margin: 10px 20px;
+  }
+  
+  .input input {
+    height: 100%;
+    width: 100%; /* Take up available width */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #212F3D;
+    font-size: 15px;
+    
+  }
+  
+  .forgot-password {
+    margin-top: 27px;
+    color: #797979;
+    font-size: 18px;
+  }
+  
+  .forgot-password span {
+    color: #D5D8DC;
+    cursor: pointer;
+  }
+  
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+  }
+  
+  .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #48C9B0;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .gray{
+    background: #EAEAEA;
+    color: #676767;
+  }
+
+  .submit:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25); /* Increase shadow on hover */
+  }
+  
+  .footer {
+    color: #fff;
+    margin-top: 30px;
+  }

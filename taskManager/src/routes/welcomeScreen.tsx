@@ -19,12 +19,12 @@ return (
 <h1>Welcome to Tasks Pro.</h1>
 <div className="card">
 
-
-<Link to='/home'>
+<Link to='/home/login'>
 <button className="get-started-button">
 Get Started
 </button>
 </Link>
+
 
 
 </div>

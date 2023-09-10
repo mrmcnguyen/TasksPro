@@ -33,7 +33,7 @@
   position: fixed; /* Fixed positioning */
   top: 0;
   left: 0; /* Stick to the left side of the viewport */
-  width: 250px; /* Adjust the width as needed */
+  width: 400px; /* Adjust the width as needed */
   height: 100%; /* Occupy full height of the viewport */
   background-color: #333; /* Set a background color */
   color: #fff; /* Set text color */
@@ -52,18 +52,23 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 290px;
+    width: 440px;
+    height: 100px;
     
     display: flex;
-    justify-content: space-between 5px;
+    justify-content: space-around 5px;
     align-items: center;
 
-    
+    background-color: #17202A;
+    border-bottom: transparent;
+    border-bottom-left-radius: 25px;
   }
 
   .dashboard-container .logoDiv .icon {
+    left: 0;
     height: 60px;
     padding: 10px;
+    padding-left: 40px;
   }
 
   .dashboard-container .logoText{
@@ -73,6 +78,70 @@
     -webkit-background-clip: text;
     font-weight: bold;
     font-size: 2em;
+  }
+
+  .home {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    background-color: #4D5656;
+    border-radius: 25px;
+  }
+  
+
+  .home:hover{
+    background: linear-gradient(to right, #fff, #00A4FA);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .settings {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    
+    background-color: #4D5656;
+    border-radius: 25px;
+
+  }
+
+  .settings:hover{
+    background: linear-gradient(to right, #fff, #00A4FA);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+
+  .navigation {
+    position: fixed;
+    padding-top: 40px;
+    top:80px;
+    width: 400px;
+    left: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2em;
+    font-weight: 30;
+  }
+
+  .navigation .homeIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navigation .settingsIcon {
+    width: 30px;
+    height: 30px;
   }
 
   @keyframes fade-in-bottom {
@@ -120,7 +189,11 @@
   padding: 5px;
   }
 
-
+  .pfp {
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+  }
 
   #detail {
   flex: 1;
@@ -136,12 +209,13 @@
   .container .inputs .taskName {
   width: 100%;
   max-width: 400px;
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0 auto;
   border: solid transparent;
   border-radius: 25px;
   padding: 1.4rem 2rem 1.6rem;
   background: rgba(57, 63, 84, 0.8);
+  box-shadow:  5px 5px 60px #4D5656; /* Added box-shadow property */
   margin-top: 40px;
   }
   .container .inputs .addTask {
@@ -182,19 +256,12 @@
   max-height: 8em; /* Adjust logo size for smaller screens */
   }
   }
-  @keyframes logo-spin {
-  from {
-  transform: rotate(0deg);
-  }
-  to {
-  transform: rotate(360deg);
-  }
-  }
-  @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-  animation: logo-spin infinite 20s linear;
-  }
-  }
+    
+  @media (max-width: 700px) {
+    .rightContainer {
+        display:none;
+    }
+}
 
   .container .tasks {
     height: 100%;
@@ -217,19 +284,45 @@
     background-color: #17202A ;
   }
 
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px); /* Add a slight vertical movement */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Reset vertical position */
+    }
+  }
+
+  .fade-in-element {
+    opacity:0;
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
+  
   .taskId {
     font-size: 1.2em;
     font-weight: bold;
+  }
+
+  .userDisplay {
+    width: 400px;
+    background-color: #4D5656;
+    height: 250px;
+    border-radius: 25px;
   }
 
   .rightContainer {
     display: flex;
     flex-direction: column;
     position:fixed;
-    width: 100%;
     height: 100%;
-    left: 294px;
+    background-color: #17202A;
+    top:0;
+    right: 0;
+    left: 442px;
     place-items: center;
+    overflow-x: hidden;
   }
 
   .deleteTask {

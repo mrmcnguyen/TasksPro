@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import { Task } from './Task';
 import Logo from '../resources/logoICON.png'
+import homeIcon from '../resources/home.png'
+import profile from '../resources/pfp.png'
+import settingsIcon from '../resources/settings.png'
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import './Dashboard.css'
 import './Sidebar'
@@ -34,14 +37,33 @@ return (
 <div className="dashboard-container">
 <Link to='/'>
     <div className='logoDiv'>
-<img className="icon" src={Logo}></img>
-<text className='logoText'>Tasks Pro.</text>
+<img className='icon fade-in-element' style={{ animationDelay: '0.1s' }} src={Logo}></img>
+<text className='logoText fade-in-element' style={{ animationDelay: '0.1s' }}>Tasks Pro.</text>
 </div>
 </Link>
+
+<div className='navigation'>
+    <div className='userDisplay'>
+    <img className='pfp fade-in-element' style={{ animationDelay: '0.1s' }} src={profile}></img>
+        User
+        
+    </div>
+    <Link to={'/home'}>
+
+    <div className='home fade-in-element' style={{ animationDelay: '0.1s' }}>
+    <img className='homeIcon fade-in-element' style={{ animationDelay: '0.1s' }} src={homeIcon}></img>
+    Home</div>
+    </Link>
+    <Link to={'/settings'}>
+    <div className='settings fade-in-element' style={{ animationDelay: '0.1s' }}>
+    <img className='settingsIcon fade-in-element' style={{ animationDelay: '0.1s' }} src={settingsIcon}></img>
+    Settings</div>
+    </Link>
+</div>
 </div>
 <div className='rightContainer'>
-<h1 className='welcome-text'>Today's Tasks</h1>
-<div className='tasks'>
+<h1 className='welcome-text fade-in-element' style={{ animationDelay: '0.1s' }}>Today's Tasks</h1>
+<div className='tasks fade-in-element' style={{ animationDelay: '0.1s' }}>
 {tasks.map(task => (
 <div className='taskEntry' key={task.id}>
 <input className='checkBox'
@@ -54,7 +76,7 @@ onChange={() => handleToggleComplete(task.id)}
 </div>
 ))}
 </div>
-<div className='inputs'>
+<div className='inputs fade-in-element' style={{ animationDelay: '0.1s' }}>
 <input
 className="taskName"
 type="text"
