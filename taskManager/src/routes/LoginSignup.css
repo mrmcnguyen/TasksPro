@@ -128,7 +128,7 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #212F3D;
+    color: #fff;
     font-size: 15px;
     
   }
@@ -146,28 +146,34 @@
   
   .submit-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 60px;
+    flex-direction: column;
+    place-items: center;
+    gap: 5px;
+    margin-top: 30px;
   }
   
   .submit {
+    width: 250px;
+    height: 50px;
+    background: linear-gradient(to right, #00FD92, #00A4FA);
+    color: #242424; /* Set the text color to make it readable on the gradient background */
+    border: none; /* Remove any default button border */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    transition: filter 300ms;
+    animation: moveColors 0.5s backwards infinite;
+    margin-bottom: 20px;
+  }
+
+  .login {
+    width: 220px;
+    margin-top: 20px;
+    background-color: #242424;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 59px;
-    color: #fff;
-    background: #48C9B0;
-    border-radius: 50px;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: color 0.3s ease;
   }
-  .gray{
-    background: #EAEAEA;
-    color: #676767;
+
+  .hide{
+    display: none;
   }
 
   .submit:hover {
@@ -175,6 +181,6 @@
   }
   
   .footer {
-    color: #fff;
+    color: #888;
     margin-top: 30px;
   }

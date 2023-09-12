@@ -9,6 +9,7 @@ import email_icon from '../resources/email.png'
 import password_icon from '../resources/password.png'
 import user_icon from '../resources/person.png'
 
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -28,36 +29,19 @@ console.log("Test");
 const firebase = initializeApp(firebaseConfig);
 const auth = getAuth(firebase);
 
-const LoginSignup = () => {
+const Signup = () => {
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const [errorMessage, setErrorMessage] = useState("");
-    const [action, setAction] = useState("Log In");
-    const [email, setEmail] = useState(""); // State variable for email
-    const [password, setPassword] = useState(""); // State variable for password
-    const [username, setUsername] = useState(""); // State variable for username
+const [email, setEmail] = useState(""); // State variable for email
+const [password, setPassword] = useState(""); // State variable for password
+const [username, setUsername] = useState(""); // State variable for username
 
-    const handleActionChange = () => {
-        //Toggle between "Log In" and "Sign Up"
-        setAction(prevAction => prevAction === "Log In" ? "Sign Up" : "Log In");
-    };
-
-    const handleFormSubmit = async (action) => {
+    const handleFormSubmit = async () => {
         //event.preventDefault()
 
         try{
-        // Implement your login or signup logic here based on the 'action' state
-        if (action === "Log In") {
-          // Handle log in
           await signInWithEmailAndPassword(auth, email, password);
-          console.log("Login done");
-
-        } else {
-
-          // Handle sign up
-          await createUserWithEmailAndPassword(auth, email, password);
-          console.log("Sign Up successful");
         }
-      }
       catch (error) {
         console.error("Authentication Error: ", error.message);
         setErrorMessage(error.message); // Set the error message state
@@ -67,16 +51,10 @@ return (
     <body className='screen'>
 <div className="App">
 <div className='header fade-in-element' style={{ animationDelay: '0.1s' }}>
-<div className='text'>{action}</div>
+<div className='text'>Log In</div>
 <div className='underline'></div>
 </div>
 <div className='inputs fade-in-element' style={{ animationDelay: '0.1s' }}>
-    {action === "Sign Up" && (
-        <div className='input'>
-        <img src={user_icon} alt="" />
-        <input type="text" placeholder='Name' value={username} onChange={(e) => setUsername(e.target.value)}/>
-        </div>
-    )}
 <div className='input'>
 <img src={email_icon} alt="" />
 <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -91,20 +69,19 @@ return (
   </div>
 )}
 </div>
-{action === "Sign Up" ? <div></div>: <div className="forgot-password fade-in-element"  style={{ animationDelay: '0.1s' }}><Link to='/home'><span>Forgot Password?</span></Link></div>} 
+<div className="forgot-password fade-in-element"  style={{ animationDelay: '0.1s' }}><Link to='/home'><span>Forgot Password?</span></Link></div>
 <div className="submit-container fade-in-element" style={{animationDelay: '0.1s' }}>
-<div className={action==="Log In"? "submit gray":"submit"} onClick={() => {
-      setAction("Sign Up"); // Update the action
-      handleFormSubmit("Sign Up"); // Call handleFormSubmit
-    }}>Sign Up</div>
-<div className={action==="Sign Up"?" submit gray":"submit"} onClick={() => {
-      setAction("Log In"); // Update the action
-      handleFormSubmit("Log In"); }}>Log In</div>
+<button className="submit" onClick={() => {
+      handleFormSubmit(); // Call handleFormSubmit
+    }}>Log In</button>
+
+<Link to='/home/signup'>Don't have an account? Sign up</Link>
 </div>
-<text className='footer fade-in-element' style={{animationDelay: '0.1s' }}>Synergy 2023 ©. Powered by YMD. All Rights Reserved.</text>
+<text className='footer fade-in-element' style={{animationDelay: '0.1s' }}>Tasks Pro 2023 ©. Powered by YMD Group. All Rights Reserved.</text>
 </div>
 </body>
 )
 }
 
-export default LoginSignup
+
+export default Signup;

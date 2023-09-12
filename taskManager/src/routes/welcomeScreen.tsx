@@ -20,8 +20,14 @@ return (
 <div className="card">
 
 <Link to='/home/login'>
-<button className="get-started-button">
-Get Started
+<button className="login-button">
+Log In 
+</button>
+</Link>
+
+<Link to='/home/signup'>
+<button className="signup-button">
+Sign Up
 </button>
 </Link>
 

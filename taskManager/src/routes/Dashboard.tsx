@@ -9,7 +9,9 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import './Dashboard.css'
 import './Sidebar'
 
-function Dashboard(){
+import LoginSignup from './Signup';
+
+function Dashboard( ){
 const [tasks, setTasks] = useState<Task[]>([]);
 const [newTask, setNewTask] = useState<Task>({ id: 0, title: '', description: '', completed: false });
 
@@ -45,8 +47,6 @@ return (
 <div className='navigation'>
     <div className='userDisplay'>
     <img className='pfp fade-in-element' style={{ animationDelay: '0.1s' }} src={profile}></img>
-        User
-        
     </div>
     <Link to={'/home'}>
 

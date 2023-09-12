@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './routes/welcomeScreen'
 import ErrorPage from "./routes/error-page";
 import Sidebar from './routes/Sidebar'
+import Login from './routes/Login'
 
-
+import {useState} from 'react';
 import {
 createBrowserRouter,
 RouterProvider,
@@ -12,8 +13,7 @@ RouterProvider,
 import './index.css'
 import Root from "./routes/root";
 import Dashboard from './routes/Dashboard';
-import LoginSignup from './routes/LoginSignup';
-
+import Signup from './routes/Signup';
 
 const router = createBrowserRouter([
 {
@@ -23,7 +23,7 @@ errorElement: <ErrorPage />,
 },
 {
 path: "home",
-element: <Dashboard />,
+element: <Dashboard/>,
 children: [
 {
 path: "home/:sidebar",
@@ -32,10 +32,15 @@ element: <Sidebar />,
 ],
 },
 {
-path: "/home/login",
-element: <LoginSignup />,
+path: "/home/signup",
+element: <Signup />,
 errorElement: <ErrorPage />,
 },
+{
+    path: "/home/login",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+    },
 
 ])
 
