@@ -26,13 +26,17 @@ const { name, value } = e.target;
 setNewTask({ ...newTask, [name]: value });
 };
 
-
 const handleToggleComplete = (taskId: number) => {
 const updatedTasks = tasks.map(task =>
 task.id === taskId ? { ...task, completed: !task.completed } : task
 );
 setTasks(updatedTasks);
 };
+
+const handleDeleteTask = (taskId: number) => {
+    const updatedTasks = tasks.filter(task => task.id !== taskId);
+    setTasks(updatedTasks);
+}
 
 return (
 <div className="container">
@@ -72,7 +76,7 @@ checked={task.completed}
 onChange={() => handleToggleComplete(task.id)}
 />
 <span className='taskId'>{task.title}</span>
-<button className='deleteTask'>Delete</button>
+<button className='deleteTask' onClick={() => handleDeleteTask}>Delete</button>
 </div>
 ))}
 </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './LoginSignup.css'
 import { initializeApp } from "firebase/app";
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import 'firebase/auth';
 
@@ -31,22 +32,28 @@ const auth = getAuth(firebase);
 
 const Signup = () => {
   const [errorMessage, setErrorMessage] = useState("");
-
-const [email, setEmail] = useState(""); // State variable for email
-const [password, setPassword] = useState(""); // State variable for password
-const [username, setUsername] = useState(""); // State variable for username
+  const navigate = useNavigate();
+  const goToDashboard = () => navigate('/home');
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState(""); // State variable for email
+  const [password, setPassword] = useState(""); // State variable for password
+  const [username, setUsername] = useState(""); // State variable for username
 
     const handleFormSubmit = async () => {
         //event.preventDefault()
 
         try{
           // Handle sign up
+          setIsLoading(true);
           await createUserWithEmailAndPassword(auth, email, password);
           console.log("Sign Up successful");
+          goToDashboard();
       }
       catch (error) {
         console.error("Authentication Error: ", error.message);
-        setErrorMessage(error.message); // Set the error message state
+        setErrorMessage("An error occured while trying to sign in."); // Set the error message state
+      } finally {
+        setIsLoading(false);
       }
       };
 return (
@@ -78,10 +85,14 @@ return (
 )}
 </div>
 <div className="submit-container fade-in-element" style={{animationDelay: '0.1s' }}>
-<button className="submit" onClick={() => {
-
-      handleFormSubmit(); // Call handleFormSubmit
-    }}>Sign Up</button>
+{isLoading ? (
+            <div className="spinner"><div></div><div></div><div></div><div></div></div>
+          ) : (
+            // Render the button when isLoading is false
+            <button className="submit" onClick={handleFormSubmit}>
+              Sign Up
+            </button>
+          )}
 
 <Link to='/home/login'>Already have an account? Log In</Link>
 
