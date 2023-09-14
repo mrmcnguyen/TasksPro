@@ -41,11 +41,6 @@
   text-align: left;
   overflow-x: hidden;
 
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-image: linear-gradient(#00FD92, #00A4FA) 1;
-
-
   }
 
   .dashboard-container .logoDiv {
@@ -81,55 +76,61 @@
   }
 
   .home {
-    width: 400px;
-    height: 40px;
+    width: 420px;
+    height: 60px;
     display: flex;
-    justify-content: center;
+    padding-left: 20px;
+    margin-top: 20px;
+    justify-content: left;
     align-items: center;
     gap: 15px;
-
-    background-color: #4D5656;
-    border-radius: 25px;
+    background-color: #5F6A7F;
+    color: #fff;
+    border-left: solid #00FD92 5px;
+    font-weight: 10;
   }
   
-
-  .home:hover{
-    background: linear-gradient(to right, #fff, #00A4FA);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
-
   .settings {
-    width: 400px;
-    height: 40px;
+    width: 420px;
+    height: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding-left:20px;
     align-items: center;
     gap: 15px;
-
-    
-    background-color: #4D5656;
-    border-radius: 25px;
-
+    font-weight: 10;
   }
 
   .settings:hover{
-    background: linear-gradient(to right, #fff, #00A4FA);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    background-color: #5F6A7F;
+    color: #fff;
   }
 
+  .logOut {
+    width: 420px;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    padding-left:20px;
+    align-items: center;
+    gap: 15px;
+    font-weight: 10;
+  }
+
+  .logOut:hover{
+    background-color: #5F6A7F;
+    color: #fff;
+  }
 
   .navigation {
     position: fixed;
     padding-top: 40px;
     top:80px;
-    width: 400px;
-    left: 20px;
+    width: 420px;
+    left: 0px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     font-size: 1.2em;
     font-weight: 30;
   }
@@ -140,6 +141,11 @@
   }
 
   .navigation .settingsIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navigation .logOutIcon {
     width: 30px;
     height: 30px;
   }
@@ -309,6 +315,8 @@
     width: 400px;
     background-color: #4D5656;
     height: 250px;
+    left:20px;
+    margin-left: 20px;
     border-radius: 25px;
   }
 
@@ -317,7 +325,7 @@
     flex-direction: column;
     position:fixed;
     height: 100%;
-    background-color: #17202A;
+    background-color: #5F6A6A;
     top:0;
     right: 0;
     left: 442px;

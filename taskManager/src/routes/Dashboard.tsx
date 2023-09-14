@@ -5,6 +5,7 @@ import Logo from '../resources/logoICON.png'
 import homeIcon from '../resources/home.png'
 import profile from '../resources/pfp.png'
 import settingsIcon from '../resources/settings.png'
+import logOut from '../resources/logOut.png'
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import './Dashboard.css'
 import './Sidebar'
@@ -14,7 +15,8 @@ import LoginSignup from './Signup';
 function Dashboard( ){
 const [tasks, setTasks] = useState<Task[]>([]);
 const [newTask, setNewTask] = useState<Task>({ id: 0, title: '', description: '', completed: false });
-
+const [page, setPage] = useState('Home');
+const [logOutState, setLogOutState] = useState(false);
 const handleAddTask = () => {
 setTasks([...tasks, newTask]);
 setNewTask({ id: newTask.id + 1, title: '', description: '', completed: false });
@@ -43,25 +45,29 @@ return (
 <div className="dashboard-container">
 <Link to='/'>
     <div className='logoDiv'>
-<img className='icon fade-in-element' style={{ animationDelay: '0.1s' }} src={Logo}></img>
-<text className='logoText fade-in-element' style={{ animationDelay: '0.1s' }}>Tasks Pro.</text>
+<img className='icon' style={{ animationDelay: '0.1s' }} src={Logo}></img>
+<text className='logoText' style={{ animationDelay: '0.1s' }}>Tasks Pro.</text>
 </div>
 </Link>
 
 <div className='navigation'>
     <div className='userDisplay'>
-    <img className='pfp fade-in-element' style={{ animationDelay: '0.1s' }} src={profile}></img>
+    <img className='pfp' style={{ animationDelay: '0.1s' }} src={profile}></img>
     </div>
     <Link to={'/home'}>
-
-    <div className='home fade-in-element' style={{ animationDelay: '0.1s' }}>
-    <img className='homeIcon fade-in-element' style={{ animationDelay: '0.1s' }} src={homeIcon}></img>
+    <div className='home' style={{ animationDelay: '0.1s'}} onClick={() => setPage}>
+    <img className='homeIcon' style={{ animationDelay: '0.1s' }} src={homeIcon}></img>
     Home</div>
     </Link>
-    <Link to={'/settings'}>
-    <div className='settings fade-in-element' style={{ animationDelay: '0.1s' }}>
-    <img className='settingsIcon fade-in-element' style={{ animationDelay: '0.1s' }} src={settingsIcon}></img>
+    <Link to={'/home/settings'}>
+    <div className='settings' style={{ animationDelay: '0.1s' }}>
+    <img className='settingsIcon' style={{ animationDelay: '0.1s' }} src={settingsIcon}></img>
     Settings</div>
+    </Link>
+    <Link to={'/'}>
+    <div className='logOut' style={{ animationDelay: '0.1s' }} onClick={() => setLogOutState(true)}>
+    <img className='logOutIcon' style={{ animationDelay: '0.1s' }} src={logOut}></img>
+    Log Out</div>
     </Link>
 </div>
 </div>
@@ -96,11 +102,6 @@ Version 1.0.0
 </p>
 </div>
 </div>
-
-
-
-
-
 
 );
 };

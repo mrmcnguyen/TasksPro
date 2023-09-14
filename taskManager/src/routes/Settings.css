@@ -1,0 +1,356 @@
+.root {
+    max-width: 90%; /* Use a percentage for responsiveness */
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    animation: fade-in-bottom 0.5s ease-in-out forwards;
+    opacity: 0;
+    }
+    
+    
+    body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    }
+    
+    
+    #Dashboard .dashboard-container .container{
+    width: 100%;
+    }
+    
+    
+    .container {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    margin-left: 160px;
+    overflow: auto;
+    
+    
+    }
+    .dashboard-container{
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0; /* Stick to the left side of the viewport */
+    width: 400px; /* Adjust the width as needed */
+    height: 100%; /* Occupy full height of the viewport */
+    background-color: #333; /* Set a background color */
+    color: #fff; /* Set text color */
+    padding: 20px;
+    text-align: left;
+    overflow-x: hidden;
+  
+    }
+  
+    .dashboard-container .logoDiv {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 440px;
+      height: 100px;
+      
+      display: flex;
+      justify-content: space-around 5px;
+      align-items: center;
+  
+      background-color: #17202A;
+      border-bottom: transparent;
+      border-bottom-left-radius: 25px;
+    }
+  
+    .dashboard-container .logoDiv .icon {
+      left: 0;
+      height: 60px;
+      padding: 10px;
+      padding-left: 40px;
+    }
+  
+    .dashboard-container .logoText{
+      top: 20px;
+      background: linear-gradient(to right, #00FD92, #00A4FA);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      font-weight: bold;
+      font-size: 2em;
+    }
+  
+    .homes {
+      width: 420px;
+      height: 60px;
+      display: flex;
+      padding-left: 20px;
+      margin-top: 20px;
+      justify-content: left;
+      align-items: center;
+      gap: 15px;
+      font-weight: 10;
+    }
+    
+    .homes:hover{
+      background-color: #5F6A7F;
+      color: #fff;
+      border-left: solid #00FD92 5px;
+    }
+  
+    .setting {
+      width: 420px;
+      height: 60px;
+      display: flex;
+      justify-content: left;
+      padding-left:20px;
+      align-items: center;
+      gap: 15px;
+      font-weight: 10;
+
+      background-color: #5F6A7F;
+      color: #fff;
+      border-left: solid #00FD92 5px;
+    }
+
+    .settingsContainer {
+        width: 80%;
+        height: 40%;
+        background-color: #333;
+        border-radius: 25px;
+    }
+
+    .logOuts {
+        width: 420px;
+        height: 60px;
+        display: flex;
+        justify-content: left;
+        padding-left:20px;
+        align-items: center;
+        gap: 15px;
+        font-weight: 10;
+      }
+    
+      .logOuts:hover{
+        background-color: #5F6A7F;
+        color: #fff;
+      }
+  
+    .navigation {
+      position: fixed;
+      padding-top: 40px;
+      top:80px;
+      width: 400px;
+      left: 0px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2em;
+      font-weight: 30;
+    }
+  
+    .navigation .homeIcon {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .navigation .settingsIcon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .navigation .logOutIcons {
+        width: 30px;
+        height: 30px;
+      }
+  
+    @keyframes fade-in-bottom {
+    0% {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust the distance as needed */
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    #Dashboard .logo {
+    max-height: 13em;
+    padding: 1em;
+    will-change: filter;
+    transition: filter 300ms;
+    position: absolute; /* Position the logo absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    }
+    .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+    }
+    .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+    }
+    
+    
+    .container .welcome-text {
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: #D5D8DC;
+    }
+  
+  
+    .container .inputs {
+    height: 30%;
+    display:flex;
+    width: 800px;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    justify-content: center;
+    padding: 5px;
+    }
+  
+    .pfp {
+      width: 50px;
+      height: 50px;
+      padding: 20px;
+    }
+  
+    #detail {
+    flex: 1;
+    padding: 2rem 4rem;
+    width: 100%;
+    }
+    
+    
+    @keyframes gradient {
+    0%{background-position:0 0}
+    100%{background-position:100% 0}
+    }
+    .container .inputs .taskName {
+    width: 100%;
+    max-width: 400px;
+    font-size: 1.2em;
+    margin: 0 auto;
+    border: solid transparent;
+    border-radius: 25px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: rgba(57, 63, 84, 0.8);
+    box-shadow:  5px 5px 60px #4D5656; /* Added box-shadow property */
+    margin-top: 40px;
+    }
+    .container .inputs .addTask {
+    width: 180px;
+    height: 40px;
+    background: linear-gradient(to right, #00FD92, #00A4FA);
+    color: #242424; /* Set the text color to make it readable on the gradient background */
+    border: none; /* Remove any default button border */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    transition: filter 300ms;
+    animation: moveColors 0.5s backwards infinite;
+    }
+  
+  
+    .container .tasks {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    justify-content: center;
+    }
+    @keyframes fade-in-bottom {
+    0% {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust the distance as needed */
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    /* Add more media queries for different screen sizes if needed */
+    @media (max-width: 768px) {
+    #root {
+    padding: 1rem; /* Adjust padding for smaller screens */
+    }
+    .logo {
+    max-height: 8em; /* Adjust logo size for smaller screens */
+    }
+    }
+      
+    @media (max-width: 700px) {
+      .rightContainer {
+          display:none;
+      }
+  }
+  
+    .container .tasks {
+      height: 100%;
+      width: 800px;
+      border: 25px hidden;
+      border-radius: 25px;
+      background: #333;
+      overflow-y: auto;
+    }
+  
+    .taskEntry {
+      width: 700px;
+      gap: 10px;
+      height: 90px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border: 2px transparent;
+      background-color: #17202A ;
+    }
+  
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(10px); /* Add a slight vertical movement */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* Reset vertical position */
+      }
+    }
+  
+    .fade-in-element {
+      opacity:0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+    
+    .taskId {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  
+    .userDisplay {
+      width: 400px;
+      background-color: #4D5656;
+      height: 250px;
+      left:20px;
+      margin-left: 20px;
+      border-radius: 25px;
+    }
+  
+    .rightContainer {
+      display: flex;
+      flex-direction: column;
+      position:fixed;
+      height: 100%;
+      background-color: #5F6A6A;
+      top:0;
+      right: 0;
+      left: 442px;
+      place-items: center;
+      overflow-x: hidden;
+    }
+  
+    .deleteTask {
+      width: 90px;
+    height: 40px;
+    color: #fff; /* Set the text color to make it readable on the gradient background */
+    border: solid 2px transparent; /* Remove any default button border */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    background-color: #242F3D;
+    }
+    
+    
+    
+    

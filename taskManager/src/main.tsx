@@ -14,6 +14,7 @@ import './index.css'
 import Root from "./routes/root";
 import Dashboard from './routes/Dashboard';
 import Signup from './routes/Signup';
+import Settings from './routes/Settings';
 
 const router = createBrowserRouter([
 {
@@ -26,7 +27,7 @@ path: "home",
 element: <Dashboard/>,
 children: [
 {
-path: "home/:sidebar",
+path: "home/sidebar",
 element: <Sidebar />,
 },
 ],
@@ -41,6 +42,11 @@ errorElement: <ErrorPage />,
     element: <Login />,
     errorElement: <ErrorPage />,
     },
+    {
+        path: "/home/settings",
+        element: <Settings />,
+        errorElement: <ErrorPage />,
+        },
 
 ])
 
